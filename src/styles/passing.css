@@ -22,8 +22,6 @@
   color: #f5f7f6;
 }
 
-/* Team names */
-
 .passing-team-header {
   display: grid;
   grid-template-columns: 1fr 240px 1fr;
@@ -170,4 +168,91 @@
 
   color: #d5dbd7;
   font-size: 13px;
+}
+
+@media (max-width: 768px) {
+
+  .passing-section {
+    width: 100%;
+    padding: 16px 0 32px;
+  }
+
+  .passing-card {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 20px 16px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .passing-card h3 {
+    margin: 4px 0 22px;
+    font-size: 20px;
+  }
+
+  .passing-team-header {
+    grid-template-columns: minmax(0, 1fr) 60px minmax(0, 1fr);
+    gap: 6px;
+    padding: 0 0 18px;
+  }
+
+  .passing-team-header strong {
+    min-width: 0;
+    font-size: 11px;
+    overflow-wrap: anywhere;
+  }
+
+  .passing-team-header strong:first-child {
+    text-align: left;
+  }
+
+  .passing-team-header strong:last-child {
+    text-align: right;
+  }
+
+  .passing-team-header span {
+    font-size: 9px;
+  }
+
+  .passing-stat-row {
+    grid-template-columns: 38px minmax(0, 1fr) 38px;
+    gap: 10px;
+    min-height: 68px;
+  }
+
+  .passing-stat-row > strong {
+    font-size: 16px;
+  }
+
+  .passing-stat-middle {
+    min-width: 0;
+  }
+
+  .passing-stat-middle > span {
+    font-size: 11px;
+  }
+
+  .passing-accuracy {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 22px;
+  }
+
+  .passing-accuracy > div {
+    min-width: 0;
+    padding: 20px 12px;
+  }
+
+  .passing-accuracy span {
+    font-size: 9px;
+  }
+
+  .passing-accuracy strong {
+    font-size: 30px;
+  }
+
+  .passing-accuracy small {
+    font-size: 12px;
+  }
 }

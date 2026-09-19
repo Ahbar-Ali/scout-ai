@@ -209,7 +209,95 @@
 
 .report-conversation {
   margin-top: 24px;
-  max-height: 500px;
-  overflow-y: auto;
-  padding-right: 8px;
+}
+
+@media (max-width: 768px) {
+
+  .reports-page {
+    width: 100%;
+    max-width: none;
+    padding: 20px 14px 32px;
+    box-sizing: border-box;
+  }
+
+  .reports-header {
+    margin-bottom: 22px;
+  }
+
+  .reports-header h1 {
+    font-size: 26px;
+  }
+
+  .reports-header p {
+    font-size: 14px;
+  }
+
+  .reports-upload-card {
+    min-height: 240px;
+    padding: 24px 16px;
+  }
+
+  .report-analysis-card {
+    width: 100%;
+    min-width: 0;
+    margin-top: 18px;
+    padding: 18px 14px;
+    box-sizing: border-box;
+  }
+
+  .report-question-input {
+    gap: 8px;
+  }
+
+  .report-question-input input {
+    min-width: 0;
+    padding: 12px;
+  }
+
+  .report-question-input button {
+    flex-shrink: 0;
+    padding: 0 14px;
+  }
+
+  .report-answer {
+    width: 100%;
+    min-width: 0;
+    padding: 16px 14px;
+    box-sizing: border-box;
+  }
+
+  .report-answer-content {
+    min-width: 0;
+    font-size: 14px;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+  }
+
+  .report-answer-content ul,
+  .report-answer-content ol {
+    padding-left: 20px;
+  }
+
+  .report-conversation {
+    max-height: none;
+    overflow: visible;
+    padding-right: 0;
+  }
+
+  /* Markdown tables */
+  .report-answer-content table {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+
+  .report-answer-content th,
+  .report-answer-content td {
+    padding: 7px 9px;
+    white-space: nowrap;
+    text-align: left;
+  }
 }

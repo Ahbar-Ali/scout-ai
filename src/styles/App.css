@@ -1313,3 +1313,253 @@
 .match-date-picker::-webkit-calendar-picker-indicator:hover {
   opacity: 1;
 }
+
+.mobile-header {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .app {
+    display: block;
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  .dashboard {
+    width: 100%;
+    min-width: 0;
+    padding: 80px 16px 24px;
+  }
+
+  .mobile-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+
+    height: 64px;
+    padding: 0 16px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    background: #08100c;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .mobile-menu-button {
+    border: 0;
+    background: transparent;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .mobile-brand {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile-brand strong {
+    font-size: 16px;
+  }
+
+  .mobile-brand span {
+    font-size: 10px;
+    opacity: 0.5;
+  }
+
+  .sidebar {
+    display: block;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    width: min(300px, 85vw);
+    z-index: 2000;
+
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+
+    overflow-y: auto;
+  }
+
+  .sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  .topbar {
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .topbar h1 {
+    font-size: 22px;
+    line-height: 1.25;
+  }
+
+  .ai-status {
+    flex-shrink: 0;
+  }
+
+  .match-content {
+    margin-top: 28px;
+  }
+
+  .match-heading {
+    display: block;
+    padding: 22px 18px;
+  }
+
+  .match-heading h2 {
+    font-size: 26px;
+    line-height: 1.25;
+  }
+
+  .match-heading h2 span {
+    margin: 0 5px;
+  }
+
+  .match-state {
+    display: inline-block;
+    margin-top: 18px;
+  }
+
+  .match-scorers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+  margin-top: 18px;
+}
+
+.home-scorers {
+  grid-column: 1;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.away-scorers {
+  grid-column: 2;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.home-scorers,
+.away-scorers {
+  gap: 7px;
+}
+
+.home-scorers span,
+.away-scorers span {
+  font-size: 11px;
+}
+
+  /* ---------- Mobile tabs ---------- */
+
+  .match-tabs {
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .match-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-button {
+    flex-shrink: 0;
+    padding: 9px 13px;
+  }
+
+  /* ---------- Mobile statistics ---------- */
+
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .stat-card {
+    min-width: 0;
+    padding: 16px;
+  }
+
+  /* ---------- Mobile analysis cards ---------- */
+
+  .analysis-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .visualization-card,
+  .insight-card {
+    min-width: 0;
+  }
+
+  .visualization-card {
+    padding: 18px;
+  }
+
+  /* ---------- Mobile lineups ---------- */
+
+  .lineups-section {
+    padding: 16px;
+  }
+
+  .lineups-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-formation .formation-pitch {
+    height: 480px;
+  }
+
+  .substitutes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ---------- Mobile passing ---------- */
+
+  .passing-section {
+    padding: 16px;
+  }
+
+  .passing-title,
+  .passing-network-header {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .passing-pitch {
+    height: 500px;
+  }
+
+  /* ---------- Mobile players ---------- */
+
+  .players-section {
+    padding: 16px;
+  }
+
+  .player-teams-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .player-stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .player-modal-overlay {
+    padding: 10px;
+  }
+
+  .player-details {
+    padding: 20px;
+  }
+
+
+}
+

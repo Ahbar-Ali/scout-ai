@@ -71,13 +71,10 @@
 
 .ai-chat {
   min-height: 330px;
-  max-height: 520px;
-  overflow-y: auto;
 
   display: flex;
   flex-direction: column;
   gap: 18px;
-
   padding: 26px;
 }
 
@@ -362,4 +359,129 @@
 .ai-chat::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.12);
   border-radius: 10px;
+}
+
+
+
+@media (max-width: 768px) {
+
+  .ai-analysis-section {
+    width: 100%;
+    min-width: 0;
+    margin-top: 18px;
+  }
+
+  .ai-analysis-header {
+    padding: 20px 16px 16px;
+  }
+
+  .ai-analysis-header h3 {
+    font-size: 20px;
+  }
+
+  .ai-analysis-header p {
+    font-size: 12px;
+  }
+
+  /* Let the PAGE scroll instead of the chat box */
+
+  .ai-chat {
+    min-height: 0;
+    max-height: none;
+    overflow-y: visible;
+    padding: 20px 14px;
+    gap: 18px;
+  }
+
+  /* Messages can use more of the mobile screen */
+
+  .chat-message {
+    max-width: 92%;
+    min-width: 0;
+  }
+
+  .user-message {
+    max-width: 88%;
+  }
+
+  .scout-message {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .user-message .message-content {
+    padding: 11px 14px;
+  }
+
+  .scout-message .message-content {
+    padding: 14px;
+  }
+
+  .message-content {
+    min-width: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+  }
+
+  /* Lists */
+
+  .message-content ul,
+  .message-content ol {
+    padding-left: 20px;
+  }
+
+  /* Markdown tables */
+
+  .message-content table {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+
+  .message-content th,
+  .message-content td {
+    padding: 7px 9px;
+    white-space: nowrap;
+    text-align: left;
+  }
+
+  /* PDF document section */
+
+  .ai-document {
+    margin: 14px;
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .ai-document-button {
+    padding: 8px 10px;
+    font-size: 10px;
+  }
+
+  .ai-document-error {
+    margin: -6px 14px 14px;
+  }
+
+  /* Input */
+
+  .ai-input-container {
+    padding: 14px;
+    gap: 8px;
+  }
+
+  .ai-input-container input {
+    min-width: 0;
+    padding: 12px;
+    font-size: 13px;
+  }
+
+  .ai-input-container button {
+    flex-shrink: 0;
+    padding: 0 14px;
+    font-size: 12px;
+  }
 }

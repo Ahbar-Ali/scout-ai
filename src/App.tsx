@@ -10,7 +10,7 @@ import FormationPitch from './components/Formation.tsx'
 import PlayerDetails from './components/PlayerDetails.tsx'
 import ReactMarkdown from 'react-markdown'
 import Reports from './components/Report'
-
+import remarkGfm from 'remark-gfm'
 
 
 type CurrentFixture = {
@@ -58,6 +58,7 @@ function App() {
   const [aiDocument, setAiDocument] = useState<string | null>(null)
   const [documentUploading, setDocumentUploading] = useState(false)
   const [documentError, setDocumentError] = useState('')
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     fetch(`${API_URL}/api/health`)
@@ -450,7 +451,7 @@ function App() {
 
   return (
     <div className="app">
-      <aside className="sidebar">
+      <aside className={`sidebar ${mobileMenuOpen ? 'mobile-open' : ''}`}>
         <div className="brand">
           <div className="brand-icon">S</div>
 
@@ -463,14 +464,20 @@ function App() {
         <nav className="navigation">
           <button
             className={`nav-item ${activePage === 'matches' ? 'active' : ''}`}
-            onClick={() => setActivePage('matches')}
+            onClick={() => {
+              setActivePage('matches')
+              setMobileMenuOpen(false)
+            }}
           >
             Matches
           </button>
 
           <button
             className={`nav-item ${activePage === 'reports' ? 'active' : ''}`}
-            onClick={() => setActivePage('reports')}
+            onClick={() => {
+              setActivePage('reports')
+              setMobileMenuOpen(false)
+            }}
           >
             Document Intelligence
           </button>
@@ -497,6 +504,7 @@ function App() {
               onClick={() => {
                 setSelectedFixture(fixture)
                 setActiveTab('overview')
+                setMobileMenuOpen(false)
               }}
             >
               <strong>
@@ -508,6 +516,21 @@ function App() {
           ))}
         </div>
       </aside>
+
+      <div className="mobile-header">
+        <button
+          className="mobile-menu-button"
+          onClick={() => setMobileMenuOpen(true)}
+          aria-label="Open navigation"
+        >
+          ☰
+        </button>
+
+        <div className="mobile-brand">
+          <strong>ScoutAI</strong>
+          <span>Football Intelligence</span>
+        </div>
+      </div>
 
       <main className="dashboard">
 
@@ -1193,9 +1216,9 @@ function App() {
               </span>
 
               <div className="message-content">
-                <ReactMarkdown>
-                  {message.content}
-                </ReactMarkdown>
+               <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                {message.content}
+              </ReactMarkdown>
               </div>
 
             </div>
