@@ -3,7 +3,7 @@ import os
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_chroma import Chroma
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from dotenv import load_dotenv
 from google import genai
 
@@ -16,10 +16,10 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 client = genai.Client(api_key=GEMINI_API_KEY)
 
-EMBEDDING_MODEL = HuggingFaceEmbeddings(
-    model_name="sentence-transformers/all-MiniLM-L6-v2"
+EMBEDDING_MODEL = GoogleGenerativeAIEmbeddings(
+    model="gemini-embedding-2",
+    google_api_key=GEMINI_API_KEY,
 )
-
 
 def load_pdf(file_name: str):
     file_path = DOCUMENTS_DIR / file_name

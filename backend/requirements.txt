@@ -11,9 +11,9 @@ langchain==1.4.2
 langchain-community==0.4.2
 langchain-text-splitters==1.1.2
 langchain-chroma==1.1.0
+langchain-google-genai
 
 chromadb==1.5.9
 pypdf==6.19.0
-sentence-transformers==6.1.0
 
 statsbombpy==1.22.0
