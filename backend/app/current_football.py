@@ -41,8 +41,14 @@ def get_fixtures_for_date(match_date: str):
 
     data = response.json()
 
+    print("API-Football status:", response.status_code)
+    print("API-Football errors:", data.get("errors"))
+    print("API-Football results:", data.get("results"))
+    print("API-Football paging:", data.get("paging"))
+
     fixtures = []
 
+   
     for match in data["response"]:
         fixtures.append(
             {
@@ -71,7 +77,8 @@ def get_fixtures_for_date(match_date: str):
         "fixtures": fixtures,
     }
 
-    fixture_cache[match_date] = result
+    if fixtures:
+        fixture_cache[match_date] = result
 
     return result
 
