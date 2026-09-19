@@ -1,0 +1,173 @@
+.passing-section {
+  width: 100%;
+  padding: 32px 0 48px;
+}
+
+.passing-card {
+  width: min(900px, 92%);
+  margin: 0 auto;
+  padding: 30px 36px;
+
+  background: #101713;
+  border: 1px solid rgba(105, 240, 160, 0.28);
+  border-radius: 18px;
+
+  box-sizing: border-box;
+}
+
+.passing-card h3 {
+  margin: 4px 0 28px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #f5f7f6;
+}
+
+/* Team names */
+
+.passing-team-header {
+  display: grid;
+  grid-template-columns: 1fr 240px 1fr;
+  align-items: center;
+
+  padding: 0 10px 20px;
+  margin-bottom: 12px;
+
+  border-bottom: 1px solid rgba(105, 240, 160, 0.22);
+}
+
+.passing-team-header strong {
+  color: #72e89a;
+  font-size: 16px;
+}
+
+.passing-team-header strong:first-child {
+  text-align: left;
+}
+
+.passing-team-header strong:last-child {
+  text-align: right;
+}
+
+.passing-team-header span {
+  text-align: center;
+
+  color: #aeb8b2;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+
+/* Passing statistic rows */
+
+.passing-stat-row {
+  display: grid;
+  grid-template-columns: 70px 1fr 70px;
+  align-items: center;
+  gap: 18px;
+
+  min-height: 76px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.passing-stat-row > strong {
+  color: #f5f7f6;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.passing-stat-row > strong:first-child {
+  text-align: right;
+}
+
+.passing-stat-row > strong:last-child {
+  text-align: left;
+}
+
+.passing-stat-middle {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.passing-stat-middle > span {
+  text-align: center;
+
+  color: #c3cbc6;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Comparison bars */
+
+.passing-comparison-bar {
+  display: flex;
+
+  width: 100%;
+  height: 7px;
+
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+}
+
+.passing-bar-home {
+  height: 100%;
+
+  background: #72e89a;
+
+  transition: width 0.35s ease;
+}
+
+.passing-bar-away {
+  height: 100%;
+
+  background: rgba(255, 255, 255, 0.32);
+
+  transition: width 0.35s ease;
+}
+
+/* Pass accuracy */
+
+.passing-accuracy {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+
+  margin-top: 26px;
+}
+
+.passing-accuracy > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 24px 20px;
+
+  background: rgba(105, 240, 160, 0.045);
+  border: 1px solid rgba(105, 240, 160, 0.15);
+  border-radius: 14px;
+}
+
+.passing-accuracy span {
+  margin-bottom: 8px;
+
+  color: #9ba7a0;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.passing-accuracy strong {
+  color: #72e89a;
+  font-size: 34px;
+  line-height: 1;
+}
+
+.passing-accuracy small {
+  margin-top: 10px;
+
+  color: #d5dbd7;
+  font-size: 13px;
+}

@@ -1,0 +1,95 @@
+.detailed-stats {
+  width: min(760px, 90%);
+  margin: 32px auto 48px;
+  padding: 30px 36px;
+
+  background: #101713;
+  border: 1px solid rgba(105, 240, 160, 0.28);
+  border-radius: 18px;
+}
+
+.detailed-stats h3 {
+  margin: 0 0 28px;
+  text-align: center;
+
+  font-size: 24px;
+  font-weight: 700;
+  color: #f5f7f6;
+}
+
+/* Team names */
+
+.stats-team-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 180px minmax(0, 1fr);
+  align-items: center;
+
+  padding: 0 8px 18px;
+  margin-bottom: 4px;
+
+  border-bottom: 1px solid rgba(105, 240, 160, 0.25);
+}
+
+.stats-team-header strong {
+  color: #72e89a;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.stats-team-header strong:first-child {
+  text-align: left;
+}
+
+.stats-team-header strong:last-child {
+  text-align: right;
+}
+
+.stats-team-header span {
+  text-align: center;
+
+  color: #c3cbc6;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+
+/* Individual statistics */
+
+.stat-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 180px minmax(0, 1fr);
+  align-items: center;
+
+  min-height: 54px;
+  padding: 0 8px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.stat-row:last-child {
+  border-bottom: none;
+}
+
+.stat-row strong {
+  color: #f4f7f5;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.stat-row strong:first-child {
+  text-align: left;
+}
+
+.stat-row strong:last-child {
+  text-align: right;
+}
+
+/* Statistic name */
+
+.stat-row span {
+  text-align: center;
+
+  color: #b6c0ba;
+  font-size: 14px;
+  font-weight: 500;
+}
