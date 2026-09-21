@@ -1,75 +1,76 @@
-# React + TypeScript + Vite
+# ⚽ ScoutAI — Agentic Football Intelligence Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ScoutAI is a full-stack AI-powered football analytics platform that combines match data, tactical analysis, document retrieval, and agentic AI to provide intelligent insights about football matches.
 
-Currently, two official plugins are available:
+The platform allows users to explore match statistics and visualizations, upload football reports for retrieval-based analysis, and ask ScoutAI questions that are dynamically routed to the appropriate data or AI tool.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Interactive football match dashboard
+- Match statistics including xG, shots, possession, and passing
+- Shot-map and tactical visualizations
+- Player and match analysis
+- AI-powered match Q&A
+- Agentic query routing with LangGraph
+- Retrieval-Augmented Generation (RAG) over uploaded football reports
+- Semantic document retrieval using vector embeddings
+- LLM tool calling for structured match data and document retrieval
+- Web research for questions requiring external information
+- Caching for repeated AI queries and retrieval results
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## AI Architecture
 
-## Expanding the ESLint configuration
+ScoutAI uses a LangGraph workflow to determine how a user's question should be answered.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Depending on the query, the agent can route requests to:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. **Match Data Tools** — retrieves structured statistics and match information
+2. **Document RAG** — searches uploaded football reports using semantic retrieval
+3. **Web Research** — retrieves external information when local data is insufficient
+4. **LLM Analysis** — combines retrieved context to generate the final response
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### RAG Pipeline
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Uploaded documents are processed through:
 
-```
+PDF Upload  
+→ Text Extraction  
+→ Document Chunking  
+→ Gemini Embeddings  
+→ ChromaDB  
+→ Vector Similarity Search  
+→ Relevant Context Retrieval  
+→ LLM Response
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## Tech Stack
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Frontend
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### AI / Backend
+- Python
+- LangGraph
+- LangChain
+- Gemini API
+- Gemini Embeddings
+- ChromaDB
 
-```
+### AI Concepts
+- Retrieval-Augmented Generation (RAG)
+- Vector Search
+- Semantic Retrieval
+- LLM Tool Calling
+- Conditional Agent Routing
+- Prompt Engineering
+
+## Running Locally
+
+### Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
